@@ -1,12 +1,10 @@
 spring:
-  application:
-    name: authentication
   datasource:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: "jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul"
-      username: springboot
-      password: p@ssw0rd
+      jdbc-url: "jdbc:mysql://mysql:3306/springbootdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul"
+      username: ${MYSQL_USER}
+      password: ${MYSQL_PASSWORD}
       connection-test-query: "select 1"
   jpa:
     hibernate:
@@ -14,6 +12,15 @@ spring:
 
 server:
   port: 8091
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
 
 token:
   expiration-time: 86400000
