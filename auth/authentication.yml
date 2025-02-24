@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: authentication
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: "jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul"
+      username: springboot
+      password: p@ssw0rd
+      connection-test-query: "select 1"
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8091
+
+logging:
+  level:
+    root: OFF
+    board: DEBUG
+  pattern:
+    console: "%d %5p {%c} %m%n"
+
+token:
+  expiration-time: 86400000
+  secret: "My JWTToken's Secret is p@ssw0rd"
