@@ -13,3 +13,13 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka:8761/eureka/
+
+server:
+  tomcat:
+    max-http-post-size: 10485760
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
