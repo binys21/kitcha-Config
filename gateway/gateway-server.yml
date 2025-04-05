@@ -40,9 +40,6 @@ spring:
           filters:
             - RewritePath=/kitcha-board/(?<segment>.*), /${segment}
 
-server:
-  port: 8072
-
 eureka:
   instance:
     prefer-ip-address: true
